@@ -1,0 +1,16 @@
+startar o servidor local:
+php artisan serve --host=0.0.0.0
+
+criar as seed:
+php artisan db:seed
+
+criar tabelas e seed:
+php artisan migrate:refresh --seed
+
+##comandos git
+echo "# incasa" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/silvarney/incasa.git
+git push -u origin master
