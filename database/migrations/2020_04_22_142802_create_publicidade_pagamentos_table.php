@@ -22,7 +22,10 @@ class CreatePublicidadePagamentosTable extends Migration
             $table->date('inicio')->nullable();
             $table->date('fim')->nullable();
             $table->integer('dias')->nullable();
-            $table->integer('status')->nullable();
+            $table->string('status')->nullable();
+
+            $table->string('wirecard_id')->nullable();
+            $table->string('wirecard_data')->nullable();
 
             $table->integer('tela_id')->unsigned();
             $table->foreign('tela_id')->references('id')->on('telas')->onDelete('cascade');

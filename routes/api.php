@@ -54,6 +54,10 @@
     
     Route::apiResource('getpedido', 'api\Empresa\GetPedidoController');
 
+    Route::apiResource('getpedidotaxaempresa', 'api\Empresa\GetPedidoTaxaController');
+
+    Route::apiResource('getpagamentotaxaempresa', 'api\Empresa\GetPagamentoTaxaController');
+
     Route::apiResource('getpedidousuario', 'api\Empresa\GetUsuarioController');
 
     Route::apiResource('getpedidoendereco', 'api\Empresa\GetUsuarioEnderecoController');

@@ -73,6 +73,8 @@ class CreatePedidosTable extends Migration
 
             $table->integer('entregador_id')->unsigned();
             $table->foreign('entregador_id')->references('id')->on('entregador')->onDelete('cascade');
+
+            $table->string('lote')->nullable();
             
             $table->timestamps();
         });

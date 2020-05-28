@@ -20,7 +20,10 @@ class SetEmpresaProdutoController extends Controller
     
     public function show($id)
     {
-        //
+        return EmpresaProduto::where('empresa_id', $id)
+        ->where('status', 'Ativo')
+        ->orderBy('nome', 'asc')
+        ->get();
     }
 
     public function update(Request $request, $id)
@@ -30,6 +33,10 @@ class SetEmpresaProdutoController extends Controller
 
     public function destroy($id)
     {
-        //
+        $produto = EmpresaProduto::findOrFail($id);
+        
+        $request['status'] = 'excluido';
+        
+        $produto->update($request);
     }
 }

@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\api\empresa;
 
 use App\Http\Controllers\Controller;
-use App\Models\PublicidadePagamento;
+use App\Models\PagamentoTaxa;
 use Illuminate\Http\Request;
-use Artistas\PagSeguro\PagSeguro;
 
-class SetPublicidadePagamentoController extends Controller
+class GetPagamentoTaxaController extends Controller
 {
     public function index()
     {
@@ -16,15 +15,11 @@ class SetPublicidadePagamentoController extends Controller
 
     public function store(Request $request)
     {
-        
-        $request['status'] = 'aguardando pagamento';
+        PagamentoTaxa::create($request->all());
 
-        PublicidadePagamento::create($request->all());
+        $pagamento = PagamentoTaxa::where('codigo', $request->codigo)->first();
 
-        $publicidade = PublicidadePagamento::where('codigo', $request->codigo)->first();
-
-        return $publicidade->id;
-
+        return $pagamento->id;
     }
 
     public function show($id)
@@ -34,7 +29,7 @@ class SetPublicidadePagamentoController extends Controller
 
     public function update(Request $request, $id)
     {
-        $pagamento = PublicidadePagamento::findOrFail($id);
+        $pagamento = PagamentoTaxa::findOrFail($id);
         $pagamento->update($request->all());
     }
 

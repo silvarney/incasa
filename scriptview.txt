@@ -1,0 +1,11 @@
+#### view de taxas
+
+CREATE VIEW vw_taxa_pedido AS
+SELECT COUNT(P.id) as total_pedidos, SUM(P.taxa_pedido) as valor_taxa, SUM(P.valor_total) as valor_pedido,  P.empresa_id, E.nome as nome_empresa
+FROM pedidos as P 
+INNER JOIN empresas AS E
+		ON E.id = p.empresa_id
+WHERE P.status = 'finalizado' and taxa_pedido_status = 'pendente'
+GROUP BY P.empresa_id, E.nome
+
+##
