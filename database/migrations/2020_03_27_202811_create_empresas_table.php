@@ -52,6 +52,8 @@ class CreateEmpresasTable extends Migration
             $table->decimal('pedido_maximo', 10, 2)->nullable();
             $table->string('pedido_status')->nullable();
 
+            $table->string('taxa_status')->nullable();
+
             $table->string('proprio')->nullable();
             $table->string('externo')->nullable();
             $table->string('balcao')->nullable();

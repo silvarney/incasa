@@ -15,7 +15,7 @@ class SetEmpresaProdutoController extends Controller
 
     public function store(Request $request)
     {
-        EmpresaProduto::create($request->all());
+        //
     }
     
     public function show($id)
@@ -28,15 +28,12 @@ class SetEmpresaProdutoController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $produto = EmpresaProduto::findOrFail($id);
+        $produto->update($request->all());
     }
 
     public function destroy($id)
     {
-        $produto = EmpresaProduto::findOrFail($id);
-        
-        $request['status'] = 'excluido';
-        
-        $produto->update($request);
+       //
     }
 }

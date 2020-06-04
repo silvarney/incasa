@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\api\empresa;
 
 use App\Http\Controllers\Controller;
-use App\Models\PagamentoTaxa;
+use App\Models\PublicidadePagamento;
 use Illuminate\Http\Request;
 
-class GetPagamentoTaxaController extends Controller
+class SetPublicidadePagamentoAtualizarController extends Controller
 {
     public function index()
     {
         //
-    } 
+    }
 
     public function store(Request $request)
     {
@@ -20,12 +20,12 @@ class GetPagamentoTaxaController extends Controller
 
     public function show($id)
     {
-        return PagamentoTaxa::where('empresa_id', $id)->get();
+        //
     }
 
     public function update(Request $request, $id)
     {
-        $pagamento = PagamentoTaxa::findOrFail($id);
+        $pagamento = PublicidadePagamento::where('wericard_id', $id);
         $pagamento->update($request->all());
     }
 

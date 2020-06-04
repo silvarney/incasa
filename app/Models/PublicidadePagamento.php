@@ -12,7 +12,7 @@ class PublicidadePagamento extends Model
      *
      * @var array
      */
-    protected $fillable = [ 
-    'tipo', 'codigo', 'valor', 'inicio', 'fim','dias', 'status', 'wirecard_id', 'wirecard_data', 'tela_id', 'cidade_id', 'empresa_id', 'user_id',
+    protected $fillable = [
+        'tipo', 'codigo', 'valor', 'inicio', 'fim', 'dias', 'status', 'forma_pagamento', 'wirecard_id', 'wirecard_data', 'tela_id', 'cidade_id', 'empresa_id', 'user_id',
     ];
 }

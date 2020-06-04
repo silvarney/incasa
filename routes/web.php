@@ -17,6 +17,20 @@ Route::group(['middleware'=>['auth'], 'namespace'=>'Admin', 'prefix'=>'admin'], 
 
 });
 
+#grupo admin
+Route::group(['namespace'=>'servidor', 'prefix'=>'servidor'], function(){
+
+    ## get
+    Route::get('/', 'AutomacaoController@index')->name('admin.index');
+    Route::get('/bloquearempresa', 'AutomacaoController@bloquear_empresa')->name('admin.bloquearempresa');
+    Route::get('/bloqueardivulgacao', 'AutomacaoController@bloquear_divulgacao')->name('admin.bloqueardivulgacao');
+
+    ## create
+    Route::post('create_configuracao', 'ConfiguracaoController@store');
+    Route::post('create_feed', 'FeedController@store');
+
+});
+
 Route::get('/', function () {
     return view('welcome');
 });

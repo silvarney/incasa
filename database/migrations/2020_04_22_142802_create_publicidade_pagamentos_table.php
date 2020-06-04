@@ -24,6 +24,8 @@ class CreatePublicidadePagamentosTable extends Migration
             $table->integer('dias')->nullable();
             $table->string('status')->nullable();
 
+            $table->string('forma_pagamento')->nullable();
+
             $table->string('wirecard_id')->nullable();
             $table->string('wirecard_data')->nullable();
 

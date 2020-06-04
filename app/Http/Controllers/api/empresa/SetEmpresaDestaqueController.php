@@ -3,30 +3,31 @@
 namespace App\Http\Controllers\api\empresa;
 
 use App\Http\Controllers\Controller;
-use App\Models\PagamentoTaxa;
+use App\Models\EmpresaDestaque;
 use Illuminate\Http\Request;
 
-class GetPagamentoTaxaController extends Controller
+class SetEmpresaDestaqueController extends Controller
 {
     public function index()
     {
         //
-    } 
+    }
 
     public function store(Request $request)
     {
-        //
+        
+        EmpresaDestaque::create($request->all());
+        
     }
 
     public function show($id)
     {
-        return PagamentoTaxa::where('empresa_id', $id)->get();
+        //
     }
 
     public function update(Request $request, $id)
     {
-        $pagamento = PagamentoTaxa::findOrFail($id);
-        $pagamento->update($request->all());
+        //
     }
 
     public function destroy($id)

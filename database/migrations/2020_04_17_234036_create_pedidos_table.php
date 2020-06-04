@@ -45,6 +45,7 @@ class CreatePedidosTable extends Migration
 
             $table->string('aceitacao')->nullable();
             $table->string('aceitacao_hora')->nullable();
+            $table->date('aceitacao_data')->nullable();
 
             $table->string('liberacao')->nullable();
             $table->string('liberacao_hora')->nullable();

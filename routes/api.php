@@ -44,7 +44,9 @@
 
     Route::apiResource('setservicoitem', 'api\empresa\SetServicoItemController');
 
+    Route::apiResource('getpublicidadepagamento', 'api\empresa\GetPublicidadePagamentoController');
     Route::apiResource('setpublicidadepagamento', 'api\empresa\SetPublicidadePagamentoController');
+    Route::apiResource('setpublicidadepagamentoatualizar', 'api\empresa\SetPublicidadePagamentoAtualizarController');
 
     Route::apiResource('getpedidoinicio', 'api\empresa\GetPedidoInicioController');
 
@@ -57,12 +59,15 @@
     Route::apiResource('getpedidotaxaempresa', 'api\empresa\GetPedidoTaxaController');
 
     Route::apiResource('getpagamentotaxaempresa', 'api\empresa\GetPagamentoTaxaController');
+    Route::apiResource('setpagamentotaxaempresa', 'api\empresa\SetPagamentoTaxaController'); 
 
     Route::apiResource('getpedidousuario', 'api\empresa\GetUsuarioController');
 
     Route::apiResource('getpedidoendereco', 'api\empresa\GetUsuarioEnderecoController');
 
     Route::apiResource('getpedidoproduto', 'api\empresa\GetPedidoProdutoController');
+
+    Route::apiResource('setempresadestaqueempresa', 'api\empresa\SetEmpresaDestaqueController');
 
 //fim - empresa
 
