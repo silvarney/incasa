@@ -25,7 +25,7 @@ class SetPublicidadePagamentoAtualizarController extends Controller
 
     public function update(Request $request, $id)
     {
-        $pagamento = PublicidadePagamento::where('wericard_id', $id);
+        $pagamento = PublicidadePagamento::where('wirecard_id', $id);
         $pagamento->update($request->all());
     }
 

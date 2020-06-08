@@ -13,6 +13,6 @@ class PublicidadeConteudo extends Model
      * @var array
      */
     protected $fillable = [ 
-    'tela', 'imagem', 'link', 'empresa_id', 'categoria_id', 'cidade_id','pagamento_id',
+    'tela', 'imagem', 'link', 'tela_id', 'empresa_id', 'categoria_id', 'cidade_id','pagamento_id',
     ];
 }

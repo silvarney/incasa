@@ -14,6 +14,8 @@
     Route::apiResource('getcidade', 'api\publico\GetCidadeController');
 
     Route::apiResource('getbairro', 'api\publico\GetBairroController');
+
+    Route::apiResource('gettela', 'api\publico\GetTelaController');
 //fim - publico
 
 //empresa
@@ -48,6 +50,8 @@
     Route::apiResource('setpublicidadepagamento', 'api\empresa\SetPublicidadePagamentoController');
     Route::apiResource('setpublicidadepagamentoatualizar', 'api\empresa\SetPublicidadePagamentoAtualizarController');
 
+    Route::apiResource('setpublicidadeconteudo', 'api\empresa\SetPublicidadeConteudoController');
+
     Route::apiResource('getpedidoinicio', 'api\empresa\GetPedidoInicioController');
 
     Route::apiResource('getpedidoempresa', 'api\empresa\GetPedidoEmpresaController');
@@ -60,6 +64,7 @@
 
     Route::apiResource('getpagamentotaxaempresa', 'api\empresa\GetPagamentoTaxaController');
     Route::apiResource('setpagamentotaxaempresa', 'api\empresa\SetPagamentoTaxaController'); 
+    Route::apiResource('setpagamentotaxaatualizarempresa', 'api\empresa\SetPagamentoTaxaAtualizarController'); 
 
     Route::apiResource('getpedidousuario', 'api\empresa\GetUsuarioController');
 

@@ -21,8 +21,7 @@ class SetUserController extends Controller
 
     public function show($id)
     {
-        //return Usuario::findOrFail($id);
-
+        
         $usuario = DB::table('users')
         ->join('cidades', function ($join) {
             $join->on('users.cidade_id', '=', 'cidades.id');

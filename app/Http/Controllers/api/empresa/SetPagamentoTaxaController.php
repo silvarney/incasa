@@ -16,17 +16,20 @@ class SetPagamentoTaxaController extends Controller
 
     public function store(Request $request)
     {
-        PagamentoTaxa::where('empresa_id', $request->empresa_id)->where('status', 'gerado')->delete();
-
+        //criacao de um novo registro de pagamento
         PagamentoTaxa::create($request->all());
 
         $pagamento = PagamentoTaxa::where('codigo', $request->codigo)->first();
 
-        $pedido = Pedido::where('empresa_id', $pagamento->empresa_id)->where('taxa_pedido_status', 'pendente');
-        $pedido_auteracao['taxa_pedido_status'] = 'aguardando pagamento';
-        $pedido->update($pedido_auteracao);
+        if (isset($pagamento)) {
+            //alteracao do status de 'pendente' para 'aguardando pagamento' nos pedidos
+            $pedido = Pedido::where('empresa_id', $pagamento->empresa_id)->where('taxa_pedido_status', 'pendente');
+            $pedido_auteracao['taxa_pedido_status'] = 'aguardando pagamento';
+            $pedido->update($pedido_auteracao);
 
-        
+            //deletar pagamentos gerados e nao pagos
+            PagamentoTaxa::where('empresa_id', $request->empresa_id)->where('status', 'gerado')->where('codigo', '!=', $request->codigo)->delete();
+        }
 
         return $pagamento->id;
     }
@@ -40,7 +43,6 @@ class SetPagamentoTaxaController extends Controller
     {
         $pagamento = PagamentoTaxa::findOrFail($id);
         $pagamento->update($request->all());
-
     }
 
     public function destroy($id)
