@@ -5,10 +5,11 @@ namespace App\Http\Controllers\api\empresa;
 use App\Http\Controllers\Controller;
 use App\Models\Feed;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GetFeedsController extends Controller
 {
-    
+
     public function index()
     {
         //
@@ -21,11 +22,11 @@ class GetFeedsController extends Controller
 
     public function show($id)
     {
-        return Feed::where('cidade_id', $id)
+      return Feed::where('cidade_id', $id)
         ->where('tipo', 'empresa')
-        ->where('tipo', 'geral')
         ->orderBy('id', 'desc')
         ->get();
+   
     }
 
     public function update(Request $request, $id)
