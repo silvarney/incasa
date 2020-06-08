@@ -23,6 +23,7 @@ class GetFeedsController extends Controller
     {
         return Feed::where('cidade_id', $id)
         ->where('tipo', 'empresa')
+        ->where('tipo', 'geral')
         ->orderBy('id', 'desc')
         ->get();
     }
