@@ -38,11 +38,10 @@ class GetPublicidadeController extends Controller
             ->limit(1)
             ->get();
 
-      
-
+            if (count($resposta) === 0) {
+                $resposta = PublicidadeConteudo::findOrFail(0);
+            }
         return $resposta;
-
-        
     }
 
     public function update(Request $request, $id)
