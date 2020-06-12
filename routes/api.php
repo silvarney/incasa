@@ -83,31 +83,31 @@
 
     Route::apiResource('getcategoriasetorcliente', 'api\cliente\GetCategoriaSetorController');
 
-    Route::apiResource('getallempresapublico', 'api\Cliente\GetAllEmpresaController');
-    Route::apiResource('getempresapublico', 'api\Cliente\GetEmpresaController');
-    Route::apiResource('getempresaunicacliente', 'api\Cliente\GetEmpresaController');
-    Route::apiResource('getempresacategoriapublico', 'api\Cliente\GetEmpresaCategoriaController');
-    Route::apiResource('getempresasubcategoriapublico', 'api\Cliente\GetEmpresaSubcategoriaController');
-    Route::apiResource('getempresaprodutopublico', 'api\Cliente\GetEmpresaProdutoController');
-    Route::apiResource('getempresadescontocliente', 'api\Cliente\GetEmpresaDescontoController');
-    Route::apiResource('getempresataxacliente', 'api\Cliente\GetEmpresaTaxaController');
+    Route::apiResource('getallempresapublico', 'api\cliente\GetAllEmpresaController');
+    Route::apiResource('getempresapublico', 'api\cliente\GetEmpresaController');
+    Route::apiResource('getempresaunicacliente', 'api\cliente\GetEmpresaController');
+    Route::apiResource('getempresacategoriapublico', 'api\cliente\GetEmpresaCategoriaController');
+    Route::apiResource('getempresasubcategoriapublico', 'api\cliente\GetEmpresaSubcategoriaController');
+    Route::apiResource('getempresaprodutopublico', 'api\cliente\GetEmpresaProdutoController');
+    Route::apiResource('getempresadescontocliente', 'api\cliente\GetEmpresaDescontoController');
+    Route::apiResource('getempresataxacliente', 'api\cliente\GetEmpresaTaxaController');
 
-    Route::apiResource('getallpedidocliente', 'api\Cliente\GetAllPedidoController'); 
-    Route::apiResource('getpedidocliente', 'api\Cliente\GetPedidoController'); 
-    Route::apiResource('setpedidocliente', 'api\Cliente\SetPedidoController');
+    Route::apiResource('getallpedidocliente', 'api\cliente\GetAllPedidoController'); 
+    Route::apiResource('getpedidocliente', 'api\cliente\GetPedidoController'); 
+    Route::apiResource('setpedidocliente', 'api\cliente\SetPedidoController');
 
-    Route::apiResource('setpedidoprodutocliente', 'api\Cliente\SetPedidoProdutoController');
+    Route::apiResource('setpedidoprodutocliente', 'api\cliente\SetPedidoProdutoController');
 
-    Route::apiResource('getallservicocliente', 'api\Cliente\GetAllServicoController');
+    Route::apiResource('getallservicocliente', 'api\cliente\GetAllServicoController');
 
-    Route::apiResource('getservicocliente', 'api\Cliente\GetServicoController');
+    Route::apiResource('getservicocliente', 'api\cliente\GetServicoController');
 
-    Route::apiResource('getservicoitemcliente', 'api\Cliente\GetServicoItemController');
+    Route::apiResource('getservicoitemcliente', 'api\cliente\GetServicoItemController');
 
-    Route::apiResource('getusuarioenderecocliente', 'api\Cliente\GetUsuarioEnderecoController');
+    Route::apiResource('getusuarioenderecocliente', 'api\cliente\GetUsuarioEnderecoController');
 
-    Route::apiResource('setusuarioenderecocliente', 'api\Cliente\SetUsuarioEnderecoController');
+    Route::apiResource('setusuarioenderecocliente', 'api\cliente\SetUsuarioEnderecoController');
 
-    Route::apiResource('getpublicidadeconteudocliente', 'api\Cliente\GetPublicidadeController');
+    Route::apiResource('getpublicidadeconteudocliente', 'api\cliente\GetPublicidadeController');
 
 //fim - cliente
