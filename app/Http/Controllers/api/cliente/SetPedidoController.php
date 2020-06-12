@@ -19,6 +19,7 @@ class SetPedidoController extends Controller
         $request['desconto_id'] = 0;
         $request['taxa_id'] = 0;
         $request['entregador_id'] = 0;
+        $request['endereco_id'] = 0;
         $request['quantidade'] = 0;
         $request['valor'] = 0.00;
         $request['status'] = 'pendente';
