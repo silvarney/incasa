@@ -74,6 +74,8 @@
 
     Route::apiResource('setempresadestaqueempresa', 'api\empresa\SetEmpresaDestaqueController');
 
+    Route::apiResource('getenderecousuarioempresa', 'api\empresa\GetEnderecoUsuarioController');
+
 //fim - empresa
 
 //cliente

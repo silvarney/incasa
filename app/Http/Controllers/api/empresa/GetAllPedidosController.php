@@ -28,11 +28,15 @@ class GetAllPedidosController extends Controller
             $fase_status = 1;
             $no_fase = 'pedidos.aceitacao';
             $no_fase_status = null;
-
         } elseif ($request->fase ===  'em_aberto') {
             $fase = 'pedidos.aceitacao';
             $fase_status = 1;
             $no_fase = 'pedidos.liberacao';
+            $no_fase_status = null;
+        } elseif ($request->fase ===  'liberado') {
+            $fase = 'pedidos.liberacao';
+            $fase_status = 1;
+            $no_fase = 'pedidos.entrega';
             $no_fase_status = null;
         }
 
@@ -54,14 +58,21 @@ class GetAllPedidosController extends Controller
     public function update(Request $request, $id)
     {
         if (isset($request->acao) && $request->acao === 'aceite') {
-            
+
             $request['status'] = 'processando';
             $request['aceitacao'] = 1;
             $request['aceitacao_hora'] = date("H:i");
 
             unset($request['acao']);
+        } elseif (isset($request->acao) && $request->acao === 'entrega') {
+
+            $request['status'] = 'finalizado';
+            $request['entrega'] = 1;
+            $request['entrega_hora'] = date("H:i");
+
+            unset($request['acao']);
         }
-        
+
         $pedido = Pedido::findOrFail($id);
         $pedido->update($request->all());
     }

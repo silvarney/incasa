@@ -30,6 +30,7 @@ class GetPedidoController extends Controller
         if (isset($request->acao) == 'liberacao') {
             
             $request['liberacao'] = 1;
+            $request['liberacao_hora'] = date("H:i");
             
             unset($request['acao']);
 
