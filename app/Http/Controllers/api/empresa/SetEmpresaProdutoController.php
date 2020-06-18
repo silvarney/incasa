@@ -15,7 +15,7 @@ class SetEmpresaProdutoController extends Controller
 
     public function store(Request $request)
     {
-        //
+        EmpresaProduto::create($request->all());
     }
     
     public function show($id)
