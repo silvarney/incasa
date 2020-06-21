@@ -62,6 +62,7 @@ class GetAllPedidosController extends Controller
             $request['status'] = 'processando';
             $request['aceitacao'] = 1;
             $request['aceitacao_hora'] = date("H:i");
+            $request['aceitacao_data'] = date("Y-m-d");
 
             unset($request['acao']);
         } elseif (isset($request->acao) && $request->acao === 'entrega') {
