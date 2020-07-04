@@ -20,6 +20,9 @@ class SetEmpresaController extends Controller
 
     public function store(Request $request)
     {
+        $request['pedido_minimo']=0.00;
+        $request['pedido_maximo']=0.00;
+
         Empresa::create($request->all());
     }
 
