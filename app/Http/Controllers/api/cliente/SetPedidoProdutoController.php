@@ -15,9 +15,9 @@ class SetPedidoProdutoController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store($request)
     {
-        //criar pedido_produto
+        /*criar pedido_produto
         PedidoProduto::create($request->all());
 
         ### alterando a tabela pedido_produto
@@ -34,7 +34,25 @@ class SetPedidoProdutoController extends Controller
 
         //realizando update na tabela pedidos
         $pedido->update($dados_pedido);
+        */
+        $status = $request->status;
+        $valor = $request->valor;
+        $quantidade = $request->quantidade;
+        $pedido_id = $request->pedido_id;
+        $produto_id = $request->produto_id;
+/*
+        foreach ($status as $key => $dado) {
+            $input['status'] = $dado;
+            $input['valor'] = $valor[$dado];
+            $input['quantidade'] = $quantidade[$dado];
+            $input['pedido_id'] = $pedido_id[$dado];
+            $input['produto_id'] = $produto_id[$dado];
 
+
+            PedidoProduto::insert($request->all());
+        }
+*/ return $request;
+        
     }
 
     public function show($id)
@@ -42,13 +60,13 @@ class SetPedidoProdutoController extends Controller
         //return PedidoProduto ::where('pedido_id', $id)->get();
 
         $produtos = DB::table('pedido_produtos')
-        ->join('empresa_produtos', function ($join) {
-            $join->on('pedido_produtos.produto_id', '=', 'empresa_produtos.id');
-        })
-        ->select('pedido_produtos.*', 'empresa_produtos.nome as nome_produto', 'empresa_produtos.valor as valor_unitario')
-        ->where('pedido_produtos.pedido_id', $id)
-        ->orderBy('empresa_produtos.nome', 'asc')
-        ->get();
+            ->join('empresa_produtos', function ($join) {
+                $join->on('pedido_produtos.produto_id', '=', 'empresa_produtos.id');
+            })
+            ->select('pedido_produtos.*', 'empresa_produtos.nome as nome_produto', 'empresa_produtos.valor as valor_unitario')
+            ->where('pedido_produtos.pedido_id', $id)
+            ->orderBy('empresa_produtos.nome', 'asc')
+            ->get();
 
         return response()->json($produtos);
     }
@@ -60,7 +78,7 @@ class SetPedidoProdutoController extends Controller
 
         //nova instancia
         $produto = PedidoProduto::findOrFail($id);
-        
+
         //dados originais
         $id_pedido = $produto->pedido_id;
         $quantidade_original = $produto->quantidade;
@@ -75,7 +93,6 @@ class SetPedidoProdutoController extends Controller
 
         //realizando update na tabela pedido_produtos
         $produto->update($request->all());
-
     }
 
     public function destroy($id)
@@ -89,11 +106,11 @@ class SetPedidoProdutoController extends Controller
         //dados originais do pedido
         $quantidade_pedido = $pedido->quantidade;
         $valor_pedido = $pedido->valor;
-        
+
         //armazenamento para set nos campos do bd
         $dados_pedido['quantidade'] = $quantidade_pedido - $produto->quantidade;
-        $dados_pedido['valor'] = $valor_pedido - $produto->valor;      
-        
+        $dados_pedido['valor'] = $valor_pedido - $produto->valor;
+
         //realizando update na tabela pedidos
         $pedido->update($dados_pedido);
 
@@ -119,7 +136,7 @@ class SetPedidoProdutoController extends Controller
 
         //armazenamento para set nos campos do bd
         $dados_pedido['quantidade'] = $quantidade_pedido;
-        $dados_pedido['valor'] = $valor_pedido;        
+        $dados_pedido['valor'] = $valor_pedido;
 
         //realizando update na tabela pedidos
         $pedido->update($dados_pedido);

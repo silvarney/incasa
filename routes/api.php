@@ -1,4 +1,7 @@
 <?php
+//publico
+    Route::apiResource('teste', 'api\TesteController');
+//fim - publico
 
 //publico
     Route::apiResource('getusuario', 'api\publico\GetUserController');
@@ -97,6 +100,7 @@
     Route::apiResource('getallpedidocliente', 'api\cliente\GetAllPedidoController'); 
     Route::apiResource('getpedidocliente', 'api\cliente\GetPedidoController'); 
     Route::apiResource('setpedidocliente', 'api\cliente\SetPedidoController');
+    Route::apiResource('getdadosempresapedidocliente', 'api\cliente\GetDadosEmpresaPedidoController');
 
     Route::apiResource('setpedidoprodutocliente', 'api\cliente\SetPedidoProdutoController');
 

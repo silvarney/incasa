@@ -21,7 +21,7 @@ class GetEmpresaProdutoController extends Controller
 
     public function show($id)
     {
-        return EmpresaProduto::where('subcategoria_id', $id)
+        return EmpresaProduto::where('empresa_id', $id)
         ->where('status', 'Ativo')
         ->orderBy('nome', 'asc')
         ->distinct()

@@ -59,9 +59,9 @@
       <br><br>
     </div>
     <div class="col-sm-10">
-      <h1>{{ $feed->titulo }}</h1>
-      <h3><b>{{ $feed->subtitulo }}</b></h3>
-      <h3>{{ $feed->descricao }}</h3>
+      <h3>{{ $feed->titulo }}</h3>
+      <h6><b>{{ $feed->subtitulo }}</b></h6>
+      <h6>{{ $feed->descricao }}</h6>
     </div>
     @endforeach
   </div>

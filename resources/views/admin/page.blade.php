@@ -15,7 +15,7 @@
     @component('menu.admin')
     @endcomponent
 
-    <h1>Admin</h1>
+    <br>
 
     <main role='main'>
         @hasSection('body_page')
