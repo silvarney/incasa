@@ -24,6 +24,8 @@ class SetEmpresaController extends Controller
         $request['pedido_maximo']=0.00;
 
         Empresa::create($request->all());
+
+        
     }
 
     public function show($id)
