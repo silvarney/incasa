@@ -79,6 +79,8 @@
 
     Route::apiResource('getenderecousuarioempresa', 'api\empresa\GetEnderecoUsuarioController');
 
+    Route::apiResource('getusuariowirecardempresa', 'api\empresa\GetUsuarioWirecardController');
+
 //fim - empresa
 
 //cliente
