@@ -17,7 +17,7 @@ class SetPedidoProdutoController extends Controller
 
     public function store($request)
     {
-        /*criar pedido_produto
+        //criar pedido_produto
         PedidoProduto::create($request->all());
 
         ### alterando a tabela pedido_produto
@@ -27,32 +27,15 @@ class SetPedidoProdutoController extends Controller
         //dados originais do pedido
         $quantidade_pedido = $pedido->quantidade;
         $valor_pedido = $pedido->valor;
-        
+
         //armazenamento para set nos campos do bd
         $dados_pedido['quantidade'] = $quantidade_pedido + $request->quantidade;
-        $dados_pedido['valor'] = $valor_pedido + $request->valor;        
+        $dados_pedido['valor'] = $valor_pedido + $request->valor;
 
         //realizando update na tabela pedidos
         $pedido->update($dados_pedido);
-        */
-        $status = $request->status;
-        $valor = $request->valor;
-        $quantidade = $request->quantidade;
-        $pedido_id = $request->pedido_id;
-        $produto_id = $request->produto_id;
-/*
-        foreach ($status as $key => $dado) {
-            $input['status'] = $dado;
-            $input['valor'] = $valor[$dado];
-            $input['quantidade'] = $quantidade[$dado];
-            $input['pedido_id'] = $pedido_id[$dado];
-            $input['produto_id'] = $produto_id[$dado];
 
-
-            PedidoProduto::insert($request->all());
-        }
-*/ return $request;
-        
+        return $request;
     }
 
     public function show($id)
