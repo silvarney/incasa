@@ -70,7 +70,7 @@ function moeda($entrada)
 
     <div class="form-group has-success">
       <label for="formDescricaoInput">Descrição</label>
-      <textarea class="form-control" id="formDescricaoInput" name="descricao" maxlength="490"> </textarea>
+      <textarea class="form-control" id="formDescricaoInput" name="descricao" maxlength="1999"> </textarea>
     </div>
 
     <div class="form-group has-success">
