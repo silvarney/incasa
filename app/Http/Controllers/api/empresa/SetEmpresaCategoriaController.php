@@ -17,8 +17,9 @@ class SetEmpresaCategoriaController extends Controller
     public function store(Request $request)
     {
         $categoria_nome = $request->nome;
+        $empresa_id = $request->empresa_id;
         
-        $categoria_inabilitada = EmpresaCategoria::where('nome', $categoria_nome)->first();
+        $categoria_inabilitada = EmpresaCategoria::where('nome', $categoria_nome)->where('empresa_id', $empresa_id)->first();
         
         if(isset($categoria_inabilitada)){
 
