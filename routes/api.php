@@ -75,6 +75,8 @@
 
     Route::apiResource('getpedidoproduto', 'api\empresa\GetPedidoProdutoController');
 
+    Route::apiResource('gethistoricopedido', 'api\empresa\GetHistoricoPedidoController');
+
     Route::apiResource('setempresadestaqueempresa', 'api\empresa\SetEmpresaDestaqueController');
 
     Route::apiResource('getenderecousuarioempresa', 'api\empresa\GetEnderecoUsuarioController');
