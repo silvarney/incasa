@@ -27,6 +27,7 @@ class GetHistoricoPedidoController extends Controller
         ->select('pedidos.*', 'users.nome as nome_cliente')
         ->where('pedidos.empresa_id', '=', $id)
         ->whereMonth('pedidos.created_at', $request->mes)
+        ->orderBy('pedidos.id', 'desc')
         ->get();
 
         return response()->json($empresa);
