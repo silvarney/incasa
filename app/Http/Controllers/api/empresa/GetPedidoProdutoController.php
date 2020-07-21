@@ -49,6 +49,8 @@ class GetPedidoProdutoController extends Controller
         $dados_pedido['quantidade'] = $request->quantidade;
 
         $pedido_valor->update($dados_pedido);
+
+        return Pedido::findOrFail($request->pedido_id);
     }
 
     public function destroy($id)

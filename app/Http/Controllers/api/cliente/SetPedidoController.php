@@ -38,6 +38,7 @@ class SetPedidoController extends Controller
     public function update(Request $request, $id)
     {
         $pedido = Pedido::findOrFail($id);
+        $request['valor_total'] = $request->valor; 
         $pedido->update($request->all());
     }
 
